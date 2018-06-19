@@ -44,7 +44,15 @@ class FooterBlock extends BlockBase {
 
     $data = json_decode($response->getBody(), TRUE);
     $data['base_url'] = self::BASE_URL;
-    
+
     return $data;
+  }
+
+  public function getCacheContexts() {
+    return Cache::mergeContexts(parent::getCacheContexts(), ['languages']);
+  }
+
+  public function getCacheMaxAge() {
+    return 3600;
   }
 }
