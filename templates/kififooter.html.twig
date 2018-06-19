@@ -1,0 +1,35 @@
+<div id="kifi-footer" class="text-center text-lg-left">
+  <h2 class="sr-only">{{ title }}</h2>
+  <div class="container" id="footer-links">
+    <div id="footer-logo" class="my-3">
+      <a href="{{ logo.link }}" aria-label="{{ logo.label }}">
+        <img src="{{ base_url ~ logo.file }}" alt="" height="45"/>
+      </a>
+      <img src="{{ base_url ~ logo_public_libraries.file }}" alt="{{ logo_public_libraries.label }}" height="45" class="public-library-logo mt-1"/>
+    </div>
+    <div class="row">
+      {% for group in links %}
+        <div class="col-lg link-group pb-1 mx-2" data-kfoot-group>
+          <h3 class="h5 py-1 mb-0 text-uppercase">{{ group.title }}</h3>
+
+          <button type="button" class="h5 py-1 mb-0" data-kfoot-toggle aria-controls="kfoot-{{ loop.index }}" aria-expanded="false">{{ menu_button.label }}</button>
+
+          <ul class="list-unstyled" id="kfoot-{{ loop.index }}">
+            {% for link in group.links %}
+              <li class="pt-1 pb-1">
+                <a href="{{ link.url }}">{{ link.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+    <div id="footer-rest" class="text-center">
+      <img src="{{ base_url ~ logo_public_libraries.file }}" alt="{{ logo_public_libraries.label }}" height="45" class="public-library-logo"/>
+
+      <div class="text-center" id="footer-cookies">
+        <a href="{{ cookies.link }}" class="d-inline-block pb-1">{{ cookies.label }}</a>
+      </div>
+    </div>
+  </div>
+</div>

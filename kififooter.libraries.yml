@@ -1,0 +1,4 @@
+kififooter:
+  css:
+    component:
+      public/css/kififooter.css: {}

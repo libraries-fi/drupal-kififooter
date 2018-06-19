@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAa;EACX,gBAAgB,EAAE,IAAI",
+"sources": ["../scss/kififooter.scss"],
+"names": [],
+"file": "kififooter.css"
+}

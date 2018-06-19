@@ -1,0 +1,17 @@
+<?php
+
+function kififooter_theme() {
+  return [
+    'kififooter' => [
+      'variables' => [
+        'data' => []
+      ]
+    ]
+  ];
+}
+
+function template_preprocess_kififooter(&$variables) {
+  $variables += $variables['data'];
+  // var_dump($variables);
+  // var_dump('preproc');
+}
